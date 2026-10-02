@@ -31,11 +31,37 @@
         font-weight: 600;
         letter-spacing: 0.5px;
     }
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
     .header .timestamp {
         font-size: 13px;
         background: rgba(255, 255, 255, 0.15);
         padding: 6px 12px;
         border-radius: 20px;
+    }
+    .refresh-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .refresh-btn:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: scale(1.03);
+    }
+    .refresh-btn:active {
+        transform: scale(0.97);
     }
     .tabs {
         display: flex;
@@ -121,7 +147,11 @@
         .header {
             flex-direction: column;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+        }
+        .header-actions {
+            width: 100%;
+            justify-content: space-between;
         }
         .table-card {
             flex: 1 1 100%;
@@ -134,7 +164,12 @@
 
     <div class="header">
         <h1>MOC BADMINTON TOURNAMENT-2026 SCORESHEET</h1>
-        <span class="timestamp">Last Updated: 02-Oct-2026 04:47 PM</span>
+        <div class="header-actions">
+            <span class="timestamp">Last Updated: 02-Oct-2026 05:01 PM</span>
+            <button class="refresh-btn" onclick="window.location.reload();" title="Refresh Page">
+                🔄 Refresh
+            </button>
+        </div>
     </div>
 
     <div class="tabs">
@@ -163,8 +198,8 @@
       <td>1</td>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
       <td>Ajith Babu &amp; Akhil Babu</td>
-      <td></td>
-      <td></td>
+      <td>18</td>
+      <td>21</td>
     </tr>
     <tr>
       <td>2</td>
@@ -286,19 +321,19 @@
   <tbody>
     <tr>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-3</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>Ajith Babu &amp; Akhil Babu</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>3</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>Nino Jacob &amp; Jojo Abraham</td>
@@ -314,7 +349,7 @@
       <td>0</td>
       <td>1</td>
       <td>-7</td>
-      <td>2.6</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>Suvin John Thomas &amp; Boban K. Mani</td>
@@ -322,7 +357,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>Lojin Mathew &amp; Jomon John Zachariah</td>
@@ -330,7 +365,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
   </tbody>
 </table>
@@ -368,8 +403,8 @@
       <td>2</td>
       <td>Benson Tom Matew &amp; Kevin Mathew</td>
       <td>Mathew K M &amp; Akhil K. George Abraham</td>
-      <td></td>
-      <td></td>
+      <td>21</td>
+      <td>16</td>
     </tr>
     <tr>
       <td>3</td>
@@ -496,23 +531,23 @@
       <td>0</td>
       <td>1</td>
       <td>-7</td>
-      <td>2.6</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>Benson Tom Matew &amp; Kevin Mathew</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>5</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>Mathew K M &amp; Akhil K. George Abraham</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-5</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>Joseph Madackel &amp; Bency Idiculla</td>
@@ -520,7 +555,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>Varghese Joy &amp; Ullas Mathew</td>
@@ -528,7 +563,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
   </tbody>
 </table>
@@ -566,8 +601,8 @@
       <td>2</td>
       <td>Tijo Thankachen &amp; Varghese Mathew</td>
       <td>Stanley Joseph &amp; Tinu Thomas</td>
-      <td></td>
-      <td></td>
+      <td>21</td>
+      <td>16</td>
     </tr>
     <tr>
       <td>3</td>
@@ -686,7 +721,7 @@
       <td>1</td>
       <td>0</td>
       <td>3</td>
-      <td>1.1</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>Anish Chacko &amp; Jibu Abraham Jacob</td>
@@ -694,23 +729,23 @@
       <td>0</td>
       <td>1</td>
       <td>-3</td>
-      <td>2.6</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>Tijo Thankachen &amp; Varghese Mathew</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>5</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>Stanley Joseph &amp; Tinu Thomas</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-5</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>Abin &amp; Melvin</td>
@@ -718,7 +753,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>Issac P. Varghese &amp; Robin Kurian</td>
@@ -726,7 +761,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
   </tbody>
 </table>
@@ -758,20 +793,20 @@
     <tr>
       <td>1</td>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-3</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>2</td>
       <td>Ajith Babu &amp; Akhil Babu</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>3</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>3</td>
@@ -789,7 +824,7 @@
       <td>0</td>
       <td>1</td>
       <td>-7</td>
-      <td>2.6</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>5</td>
@@ -798,7 +833,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>6</td>
@@ -807,7 +842,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>7</td>
@@ -825,25 +860,25 @@
       <td>0</td>
       <td>1</td>
       <td>-7</td>
-      <td>2.6</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>9</td>
       <td>Benson Tom Matew &amp; Kevin Mathew</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>5</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>10</td>
       <td>Mathew K M &amp; Akhil K. George Abraham</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-5</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>11</td>
@@ -852,7 +887,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>12</td>
@@ -861,7 +896,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>13</td>
@@ -870,7 +905,7 @@
       <td>1</td>
       <td>0</td>
       <td>3</td>
-      <td>1.1</td>
+      <td>1.2</td>
     </tr>
     <tr>
       <td>14</td>
@@ -879,25 +914,25 @@
       <td>0</td>
       <td>1</td>
       <td>-3</td>
-      <td>2.6</td>
+      <td>3.5</td>
     </tr>
     <tr>
       <td>15</td>
       <td>Tijo Thankachen &amp; Varghese Mathew</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>5</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>16</td>
       <td>Stanley Joseph &amp; Tinu Thomas</td>
+      <td>1</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2.2</td>
+      <td>1</td>
+      <td>-5</td>
+      <td>3.6</td>
     </tr>
     <tr>
       <td>17</td>
@@ -906,7 +941,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
     <tr>
       <td>18</td>
@@ -915,7 +950,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>3.3</td>
     </tr>
   </tbody>
 </table>
@@ -1439,7 +1474,7 @@
             document.getElementById(tabId).classList.add("active");
             evt.currentTarget.classList.add("active");
 
-            // Store active tab so it persists across auto-refreshes
+            // Store active tab so it persists across auto-refreshes and manual reloads
             localStorage.setItem("activeTab", tabId);
         }
 
