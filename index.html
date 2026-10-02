@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
     <title>MOC BADMINTON TOURNAMENT-2026 SCORESHEET</title>
     <style>
         
@@ -116,6 +117,16 @@
     .excel-table tr:hover {
         background-color: #edf2f7;
     }
+    @media (max-width: 600px) {
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .table-card {
+            flex: 1 1 100%;
+        }
+    }
     
     </style>
 </head>
@@ -123,7 +134,7 @@
 
     <div class="header">
         <h1>MOC BADMINTON TOURNAMENT-2026 SCORESHEET</h1>
-        <span class="timestamp">Last Updated: 02-Oct-2026 04:01 PM</span>
+        <span class="timestamp">Last Updated: 02-Oct-2026 04:08 PM</span>
     </div>
 
     <div class="tabs">
@@ -152,8 +163,8 @@
       <td>1</td>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
       <td>Ajith Babu &amp; Akhil Babu</td>
-      <td>1</td>
-      <td>12</td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>2</td>
@@ -275,18 +286,18 @@
   <tbody>
     <tr>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
-      <td>1</td>
       <td>0</td>
-      <td>1</td>
-      <td>-11</td>
-      <td>2.6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>Ajith Babu &amp; Akhil Babu</td>
-      <td>1</td>
-      <td>1</td>
       <td>0</td>
-      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.1</td>
     </tr>
     <tr>
@@ -295,7 +306,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>Sajeev Yohannan &amp; Santhosh Samuel</td>
@@ -303,7 +314,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>Suvin John Thomas &amp; Boban K. Mani</td>
@@ -311,7 +322,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>Lojin Mathew &amp; Jomon John Zachariah</td>
@@ -319,7 +330,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
   </tbody>
 </table>
@@ -747,19 +758,19 @@
     <tr>
       <td>1</td>
       <td>Samson V Yohannan &amp; Jithin Thomas</td>
-      <td>1</td>
       <td>0</td>
-      <td>1</td>
-      <td>-11</td>
-      <td>2.6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>2</td>
       <td>Ajith Babu &amp; Akhil Babu</td>
-      <td>1</td>
-      <td>1</td>
       <td>0</td>
-      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1.1</td>
     </tr>
     <tr>
@@ -769,7 +780,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>4</td>
@@ -778,7 +789,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>5</td>
@@ -787,7 +798,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>6</td>
@@ -796,7 +807,7 @@
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>2.2</td>
+      <td>1.1</td>
     </tr>
     <tr>
       <td>7</td>
@@ -1427,7 +1438,26 @@
 
             document.getElementById(tabId).classList.add("active");
             evt.currentTarget.classList.add("active");
+
+            // Store active tab so it persists across auto-refreshes
+            localStorage.setItem("activeTab", tabId);
         }
+
+        // Restore active tab after reload
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTab = localStorage.getItem("activeTab");
+            if (savedTab && document.getElementById(savedTab)) {
+                const tabBtn = document.querySelector(`[onclick*="${savedTab}"]`);
+                if (tabBtn) {
+                    tabBtn.click();
+                }
+            }
+        });
+
+        // JavaScript backup timer for 60-second refresh
+        setTimeout(() => {
+            window.location.reload();
+        }, 60000);
     </script>
 </body>
 </html>
